@@ -51,4 +51,10 @@ public class Task {
        taskStatus = TaskStatus.REALIZADA;
        return true;
    }
+
+   public void markAsExpired() {
+        if(dueDate.isBefore(LocalDateTime.now())){
+            taskStatus = TaskStatus.VENCIDA;
+        }
+   }
 }
